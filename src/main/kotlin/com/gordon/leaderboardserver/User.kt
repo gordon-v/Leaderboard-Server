@@ -10,11 +10,11 @@ data class User(
     @Column(name = "username", unique = true, nullable = false)
     var username: String,
     @Column(name = "highscore", unique = false, nullable = false)
-    var highscore: String
-){
+    var highscore: Int
+) {
     constructor(
         username: String,
-        highscore: String
+        highscore: Int
     ) : this(
         0L, username, highscore
     )

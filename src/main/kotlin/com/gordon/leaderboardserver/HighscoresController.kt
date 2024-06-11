@@ -2,6 +2,7 @@ package com.gordon.leaderboardserver
 
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable
+import org.springframework.data.domain.Sort
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
@@ -15,7 +16,7 @@ class HighscoresController(private val highscoresService: HighscoresService) {
         @RequestParam(defaultValue = "5", required = false) pageSize: Int,
         @RequestParam(defaultValue = "0", required = false) page: Int
     ): List<HighscoreResponse> {
-        val paging: Pageable = PageRequest.of(page, pageSize)
+        val paging: Pageable = PageRequest.of(page, pageSize, Sort.by("highscore").descending())
         return highscoresService.getByPage(paging)
     }
 }
