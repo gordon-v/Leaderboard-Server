@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: Leaderboard-Server
+  jpa:
+    database:
+    properties:
+      hibernate.format_sql: true
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:postgresql://localhost:5432/leaderboard
+    username: leaderboard
+    password: leaderboard
