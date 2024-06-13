@@ -10,7 +10,7 @@ class UserService(private val userRepository: UserRepository) {
     }
 
     private fun getByUsername(username: String): User =
-        userRepository.findByUsername(username) ?: throw IllegalArgumentException("username not found")
+        userRepository.findByUsername(username) ?: throw UserNotFound("User doesn't exist in db")
 
     fun updateHighscoreByUsername(username: String, updateUserPayload: UpdateUserPayload) {
         val userToUpdate = getByUsername(username)
