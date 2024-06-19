@@ -5,11 +5,11 @@ spring:
     database:
     properties:
       hibernate.format_sql: true
-      hibernate.hibernate.dialect: org.hibernate.dialect.PostgreSQL94Dialect
+      #hibernate.dialect: org.hibernate.dialect.PostgreSQL94Dialect
     hibernate:
       ddl-auto: validate
   datasource:
-    url: jdbc:postgresql://localhost:5432/leaderboard
+    url: jdbc:postgresql://db:5432/leaderboard
     username: leaderboard
     password: leaderboard
 server:

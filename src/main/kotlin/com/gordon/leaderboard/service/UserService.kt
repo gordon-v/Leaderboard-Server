@@ -4,13 +4,18 @@ import com.gordon.leaderboard.controller.CreateUserPayload
 import com.gordon.leaderboard.controller.UpdateUserPayload
 import com.gordon.leaderboard.entity.User
 import com.gordon.leaderboard.repository.UserRepository
+import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 
 @Service
 class UserService(private val userRepository: UserRepository) {
-    fun create(createUserPayload: CreateUserPayload) {
+
+    private val log = LoggerFactory.getLogger(UserService::class.java)
+
+    fun create(createUserPayload: CreateUserPayload): User {
         val userToSave = User(createUserPayload.username, createUserPayload.highscore)
-        userRepository.save(userToSave)
+        log.info("Creating new user [{}]", userToSave)
+        return userRepository.save(userToSave)
     }
 
     private fun getByUsername(username: String): User =
