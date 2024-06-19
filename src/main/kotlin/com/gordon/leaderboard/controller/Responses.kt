@@ -1,4 +1,4 @@
-package com.gordon.leaderboardserver
+package com.gordon.leaderboard.controller
 
 class HighscoreResponse(
     val username: String,

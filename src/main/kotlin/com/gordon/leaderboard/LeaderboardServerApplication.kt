@@ -1,4 +1,4 @@
-package com.gordon.leaderboardserver
+package com.gordon.leaderboard
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

@@ -1,4 +1,4 @@
-package com.gordon.leaderboardserver
+package com.gordon.leaderboard.entity
 
 import jakarta.persistence.*
 

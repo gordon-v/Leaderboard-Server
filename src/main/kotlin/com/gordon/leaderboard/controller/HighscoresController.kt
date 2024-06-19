@@ -1,5 +1,6 @@
-package com.gordon.leaderboardserver
+package com.gordon.leaderboard.controller
 
+import com.gordon.leaderboard.service.HighscoresService
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort

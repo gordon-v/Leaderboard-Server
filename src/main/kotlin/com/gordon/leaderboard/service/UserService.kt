@@ -1,5 +1,9 @@
-package com.gordon.leaderboardserver
+package com.gordon.leaderboard.service
 
+import com.gordon.leaderboard.controller.CreateUserPayload
+import com.gordon.leaderboard.controller.UpdateUserPayload
+import com.gordon.leaderboard.entity.User
+import com.gordon.leaderboard.repository.UserRepository
 import org.springframework.stereotype.Service
 
 @Service
@@ -10,7 +14,7 @@ class UserService(private val userRepository: UserRepository) {
     }
 
     private fun getByUsername(username: String): User =
-        userRepository.findByUsername(username) ?: throw UserNotFound("User doesn't exist in db")
+        userRepository.findByUsername(username) ?: throw UserNotFoundException("User doesn't exist in db")
 
     fun updateHighscoreByUsername(username: String, updateUserPayload: UpdateUserPayload) {
         val userToUpdate = getByUsername(username)
